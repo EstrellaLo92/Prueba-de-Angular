@@ -1,1 +1,47 @@
-<p>login works!</p>
+<app-menu></app-menu>
+<br />
+<!-- Usuario -->
+<form
+  class="example-form"
+  [formGroup]="miFormulario"
+  (ngSubmit)="submitFormulario()"
+  autocomplete="off"
+>
+  <!-- Email -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Ex. daniel@gmail.com"
+    />
+
+    <mat-error *ngIf="campoNoValido('email')">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Pass -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      formControlName="password"
+      placeholder="Ex. *******"
+    />
+
+    <mat-error *ngIf="campoNoValido('password')"> No </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="miFormulario.pending"
+  >
+    Log
+  </button>
+</form>

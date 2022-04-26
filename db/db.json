@@ -1,0 +1,167 @@
+{
+  "usuarios": [
+    {
+      "username": "test1",
+      "nombre": "test",
+      "apellido": "jaimes",
+      "email": "test1@test.com",
+      "password": "123456",
+      "password1": "123456",
+      "id": 1
+    },
+    {
+      "username": "test2",
+      "nombre": "tony",
+      "apellido": "mointana",
+      "email": "test2@test.com",
+      "password": "das2543",
+      "password1": "das2543",
+      "id": 2
+    },
+    {
+      "username": "test3",
+      "nombre": "tito",
+      "apellido": "gonzalez",
+      "email": "test3@test.com",
+      "password": "1542638",
+      "password1": "1542638",
+      "id": 3
+    },
+    {
+      "username": "dasfasffds",
+      "nombre": "fasdfasd",
+      "apellido": "hhgjghjgh",
+      "email": "daniel@hotmail.com",
+      "password": "123456",
+      "password2": "123456",
+      "id": 4
+    },
+    {
+      "username": "fadsfasd",
+      "nombre": "sadgsadfg",
+      "apellido": "sdfgsdfg",
+      "email": "danieldd@hotmail.com",
+      "password": "123456",
+      "password2": "123456",
+      "id": 5
+    },
+    {
+      "email": "dasdas",
+      "password": "sgdsf",
+      "item": "agua+agu",
+      "id": 6
+    },
+    {
+      "email": "dasdas",
+      "password": "sgdsf",
+      "id": 7
+    },
+    {
+      "username": "dasfasffds",
+      "nombre": "fasdfsad",
+      "apellido": "fsadf",
+      "email": "daniel@gmail.com",
+      "password": "2WUeNKRtg7Z!L9h",
+      "password2": "2WUeNKRtg7Z!L9h",
+      "id": 8
+    },
+    {
+      "username": "dasfasffds",
+      "nombre": "daniel",
+      "apellido": "Mora",
+      "email": "testfasdf1@test.com",
+      "password": "123456Mm+",
+      "password2": "123456Mm+",
+      "id": 9
+    },
+    {
+      "username": "fsadfa",
+      "nombre": "sadfsadfsad",
+      "apellido": "gasgsadg",
+      "email": "dandasdaiel@gmail.com",
+      "password": "123456Mm+",
+      "password2": "123456Mm+",
+      "id": 10
+    },
+    {
+      "username": "fasdf",
+      "nombre": "asdfasdf",
+      "apellido": "asdfasd",
+      "email": "dasdasdas@dsad",
+      "password": "123456Mn+",
+      "password2": "123456Mn+",
+      "id": 11
+    },
+    {
+      "username": "eryuyu",
+      "nombre": "iyuiyui",
+      "apellido": "ityuityui",
+      "email": "tyuityui@tyuityu",
+      "password": "1234Mm+",
+      "password2": "1234Mm+",
+      "id": 12
+    },
+    {
+      "username": "asdfasdfasdf",
+      "nombre": "piopoipiop",
+      "apellido": "piopiop",
+      "email": "piopiop@dfas",
+      "password": "123456Mm*",
+      "password2": "123456Mm*",
+      "id": 13
+    }
+  ],
+  "items": [
+    {
+      "email": "test1@test.com",
+      "item": "Setup fake Online REST server",
+      "id": 1
+    },
+    {
+      "email": "test1@test.com",
+      "item": "Bake cake",
+      "id": 2
+    },
+    {
+      "email": "dasdas",
+      "item": "agua+agu",
+      "id": 3
+    },
+    {
+      "email": "dasdas",
+      "item": "agua+agu",
+      "id": 4
+    },
+    {
+      "email": "dasdas",
+      "item": "agua+agu",
+      "id": 5
+    },
+    {
+      "email": "dasdas",
+      "item": "agua+agu",
+      "id": 6
+    },
+    {
+      "email": "dasdas",
+      "item": "agua+agu",
+      "id": 7
+    },
+    {
+      "email": "test1@test.com",
+      "item": "fasdf",
+      "id": 8
+    },
+    {
+      "email": "test1@test.com",
+      "item": "daniel",
+      "id": 9,
+      "itt": "daniel"
+    },
+    {
+      "email": "test1@test.com",
+      "item": "arepas",
+      "id": 10
+    }
+  ]
+}
