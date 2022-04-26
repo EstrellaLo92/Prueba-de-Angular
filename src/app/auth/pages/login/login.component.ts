@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private ss: SharedService,
     private rr: Router
-  ) {}
+  ) {
+    console.log(this.miFormulario.value);
+  }
   miFormulario: FormGroup = this.fb.group({
     email: ['', [Validators.required, , Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],

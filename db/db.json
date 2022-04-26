@@ -149,18 +149,18 @@
     },
     {
       "email": "test1@test.com",
-      "item": "fasdf",
+      "item": "Exercise",
       "id": 8
     },
     {
       "email": "test1@test.com",
-      "item": "daniel",
+      "item": "Dance",
       "id": 9,
       "itt": "daniel"
     },
     {
       "email": "test1@test.com",
-      "item": "arepas",
+      "item": "Work",
       "id": 10
     }
   ]
