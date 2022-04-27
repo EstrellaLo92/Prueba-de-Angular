@@ -1,0 +1,103 @@
+<app-menu></app-menu>
+<br />
+<!-- Usuario -->
+<form
+  class="example-form"
+  [formGroup]="miFormulario"
+  (ngSubmit)="submitFormulario()"
+  autocomplete="off"
+>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Username</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="username"
+      placeholder="Ex. daniel98"
+    />
+
+    <mat-error *ngIf="campoNoValido('username')"> required </mat-error>
+  </mat-form-field>
+
+  <!-- Nombre -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>FirstName</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="nombre"
+      placeholder="Ex. Daniel"
+    />
+
+    <mat-error *ngIf="campoNoValido('nombre')"> required </mat-error>
+  </mat-form-field>
+
+  <!-- Apellido -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>LastName</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="apellido"
+      placeholder="Ex. Mora"
+    />
+
+    <mat-error *ngIf="campoNoValido('apellido')"> required </mat-error>
+  </mat-form-field>
+
+  <!-- Email -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="Ex. daniel@gmail.com"
+    />
+
+    <mat-error *ngIf="campoNoValido('email')">
+      Please enter a valid email address
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Pass -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Password</mat-label>
+    <input
+      type="password"
+      matInput
+      formControlName="password"
+      placeholder="Ex. *******"
+    />
+
+    <mat-error *ngIf="campoNoValido('password')"> incorrect format </mat-error>
+  </mat-form-field>
+
+  <!-- Pass2 -->
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Confirm Password</mat-label>
+    <input
+      type="password"
+      matInput
+      formControlName="password2"
+      placeholder="Ex. *******"
+    />
+
+    <mat-error *ngIf="campoNoValido('password2')">
+      it is not the same
+    </mat-error>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    type="submit"
+    color="primary"
+    [disabled]="miFormulario.pending"
+  >
+    Save
+  </button>
+</form>
