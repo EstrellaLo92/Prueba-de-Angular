@@ -109,19 +109,18 @@
       "password": "123456Mm*",
       "password2": "123456Mm*",
       "id": 13
+    },
+    {
+      "username": "hikvoh",
+      "nombre": "bidsufhdshf",
+      "apellido": "iughf",
+      "email": "ljhdsfiads@fds",
+      "password": "123456Mm*",
+      "password2": "123456Mm*",
+      "id": 14
     }
   ],
   "items": [
-    {
-      "email": "test1@test.com",
-      "item": "Setup fake Online REST server",
-      "id": 1
-    },
-    {
-      "email": "test1@test.com",
-      "item": "Bake cake",
-      "id": 2
-    },
     {
       "email": "dasdas",
       "item": "agua+agu",
@@ -162,6 +161,16 @@
       "email": "test1@test.com",
       "item": "Work",
       "id": 10
+    },
+    {
+      "email": "test1@test.com",
+      "item": "",
+      "id": 11
+    },
+    {
+      "email": "test1@test.com",
+      "item": "Eat",
+      "id": 12
     }
   ]
 }
