@@ -1,14 +1,21 @@
-<button
-  mat-raised-button
-  type="submit"
-  class="out"
-  color="primary"
-  (click)="logout()"
->
-  LogOut
-</button>
-<h1 color="white">Dashboard</h1>
+<mat-drawer-container>
+  <mat-toolbar class="toolbar">
+    <h1 color="white">Dashboard</h1>
+    <span class="spacer"></span>
+    <button
+      mat-raised-button
+      type="submit"
+      class="out"
+      color="primary"
+      (click)="logout()"
+    >
+      LogOut
+    </button>
+  </mat-toolbar>
+</mat-drawer-container>
+
 <h2 color="white">Task</h2>
+<hr />
 
 <form
   class="example-form"
@@ -23,49 +30,60 @@
   </mat-form-field>
   <button mat-raised-button type="submit" color="primary">Save</button>
 </form>
-<mat-list>
-  <div mat-subheader>Items</div>
-  <mat-list-item *ngFor="let item of items"
-    >{{ item }}
-    <button
-      mat-icon-button
-      aria-label="Example icon button with a vertical three dot icon"
-      color="primary"
-      (click)="edit(item)"
-    >
-      <mat-icon>edit</mat-icon>
-    </button>
-    <button
-      mat-icon-button
-      aria-label="Example icon button with a vertical three dot icon"
-      color="primary"
-      (click)="eliminar(item)"
-    >
-      <mat-icon>delete</mat-icon>
-    </button>
-  </mat-list-item>
-</mat-list>
 
-<form class="example-form" [formGroup]="formulario">
-  <div class="oscuro">
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Task</mat-label>
-      <input
-        type="text"
-        matInput
-        placeholder="Ex. task"
-        formControlName="item"
-      />
-      <mat-error *ngIf="campoNoValido('item')"> Required </mat-error>
-    </mat-form-field>
-    <button
-      mat-raised-button
-      type="submit"
-      color="primary"
-      [disabled]="b === false"
-      (click)="upd()"
-    >
-      Edit
-    </button>
-  </div>
-</form>
+<div class="container">
+  <mat-list class="matList">
+    <div mat-subheader class="subheader">Items</div>
+    <hr style="color: white; background-color: white; width: 100%" />
+    <div class="item" *ngFor="let item of items" id="item">
+      <mat-list-item>{{ item }} </mat-list-item>
+      <button
+        mat-icon-button
+        aria-label="Example icon button with a vertical three dot icon"
+        color="primary"
+        (click)="edit(item)"
+        id="#icono"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        aria-label="Example icon button with a vertical three dot icon"
+        color="primary"
+        (click)="eliminar(item)"
+        id="#icono"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <hr />
+    </div>
+  </mat-list>
+</div>
+<br />
+
+<div class="oculto" [hidden]="b === false">
+  <form class="example-form-final" [formGroup]="formulario">
+    <div class="oscuro">
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>New task</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Ex. task"
+          formControlName="item"
+        />
+        <mat-error *ngIf="campoNoValido('item')"> Required </mat-error>
+      </mat-form-field>
+      <button
+        class="btn"
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="b === false"
+        (click)="upd()"
+      >
+        Edit
+      </button>
+    </div>
+  </form>
+</div>
