@@ -1,9 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class SharedService {
   constructor(private http: HttpClient) {}
@@ -28,19 +28,22 @@ export class SharedService {
       `http://localhost:3000/usuarios?q=${em}&r=${pass}`
     );
   }
+  busqueda(em: string) {
+    return this.http.get<any[]>(`http://localhost:3000/usuarios?q=${em}`);
+  }
   nuevoUsuario(campo1: any, band: any) {
     console.log(typeof campo1);
     let r;
-    if (band) r = 'usuarios';
-    else r = 'items';
+    if (band) r = "usuarios";
+    else r = "items";
     return this.http.post(`http://localhost:3000/${r}`, campo1);
   }
   nuevoItem(campo1: any) {
     console.log(typeof campo1);
-    return this.http.post('http://localhost:3000/items', campo1);
+    return this.http.post("http://localhost:3000/items", campo1);
   }
   obtenerUsuario(em: any) {
-    console.log('ss');
+    console.log("ss");
     return this.http.get<any[]>(`http://localhost:3000/items?q=${em}`);
   }
   eliminarItem(campo1: any) {

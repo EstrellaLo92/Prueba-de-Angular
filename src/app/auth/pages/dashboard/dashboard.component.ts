@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
     sessionStorage.removeItem("band");
     this.inicio();
   }
+  labelu: string = "";
   usuario: string = "";
   band = true;
   b = false;
@@ -41,6 +42,9 @@ export class DashboardComponent implements OnInit {
   });
 
   inicio() {
+    this.ss.busqueda(localStorage.getItem("user")!).subscribe((r) => {
+      this.labelu = r[0].username;
+    });
     this.ss.obtenerUsuario(localStorage.getItem("user")!).subscribe((r) => {
       //console.log(r);
       let cont = 0;
