@@ -1,10 +1,10 @@
 <mat-drawer-container>
   <mat-toolbar class="toolbar">
-    <button mat-raised-button color="primary" routerLink="auth/registro">
+    <button mat-raised-button color="primary" (click)="navegar(true)">
       Sign Up
     </button>
     <span class="spacer"></span>
-    <button mat-raised-button color="primary" routerLink="auth/login">
+    <button mat-raised-button color="primary" (click)="navegar(false)">
       Login
     </button>
   </mat-toolbar>

@@ -1,26 +1,24 @@
-import { Component, NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './auth/guards/auth.guard';
-import { ErrorComponent } from './error/error.component';
-import { MenuComponent } from './shared/menu/menu.component';
+import { Component, NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { MenuComponent } from "./shared/menu/menu.component";
 
 const routes: Routes = [
   {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    path: "auth",
+    loadChildren: () => import("./auth/auth.module").then((m) => m.AuthModule),
   },
   {
-    path: '',
+    path: "",
     component: MenuComponent,
-    pathMatch: 'full',
+    pathMatch: "full",
   },
   {
-    path: 'menu',
+    path: "menu",
     component: MenuComponent,
   },
   {
-    path: '**',
-    redirectTo: '',
+    path: "**",
+    redirectTo: "",
   },
 ];
 

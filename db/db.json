@@ -122,69 +122,28 @@
   ],
   "items": [
     {
-      "email": "dasdas",
-      "item": "agua+agu",
-      "id": 4
-    },
-    {
-      "email": "dasdas",
-      "item": "agua+agu",
-      "id": 5
-    },
-    {
-      "email": "dasdas",
-      "item": "agua+agu",
-      "id": 6
-    },
-    {
-      "email": "dasdas",
-      "item": "agua+agu",
-      "id": 7
-    },
-    {
-      "email": "test1@test.com",
-      "item": "Dance",
-      "id": 9,
-      "itt": "daniel"
-    },
-    {
-      "email": "test1@test.com",
-      "item": "Work",
-      "id": 10
-    },
-    {
-      "email": "test1@test.com",
-      "item": "Sleep",
-      "id": 11
-    },
-    {
-      "email": "test1@test.com",
-      "item": "Eat",
-      "id": 12
-    },
-    {
       "email": "test1@test.com",
       "item": "Run",
       "id": 13
     },
     {
       "email": "test1@test.com",
-      "item": "",
+      "item": "Sleep",
       "id": 14
     },
     {
       "email": "test1@test.com",
-      "item": "",
+      "item": "Family",
       "id": 15
     },
     {
       "email": "test1@test.com",
-      "item": "",
+      "item": "Exercise",
       "id": 16
     },
     {
       "email": "test1@test.com",
-      "item": "",
+      "item": "Work",
       "id": 17
     }
   ]

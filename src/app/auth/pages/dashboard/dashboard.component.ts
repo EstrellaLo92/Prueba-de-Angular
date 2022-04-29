@@ -1,12 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { SharedService } from 'src/app/shared.service';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from "@angular/router";
+import { SharedService } from "src/app/shared.service";
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
+  selector: "app-dashboard",
+  templateUrl: "./dashboard.component.html",
+  styleUrls: ["./dashboard.component.scss"],
 })
 export class DashboardComponent implements OnInit {
   constructor(
@@ -17,34 +17,35 @@ export class DashboardComponent implements OnInit {
     //if (localStorage.getItem('user')) {
     //  this.usuario = JSON.parse(localStorage.getItem('user')!);
     //}
-    sessionStorage.removeItem('band');
+    sessionStorage.removeItem("band");
     this.inicio();
   }
-  usuario: string = '';
+  usuario: string = "";
   band = true;
   b = false;
+  a = false;
   update = 0;
-  updateText = '';
+  updateText = "";
   ngOnInit(): void {}
-  items: string[] = ['Food'];
+  items: string[] = ["Food"];
   miFormulario: FormGroup = this.fb.group({
     email: [
-      localStorage.getItem('user')!,
+      localStorage.getItem("user")!,
       [Validators.required, Validators.email],
     ],
-    item: ['', [Validators.required]],
+    item: ["", [Validators.required]],
   });
 
   formulario: FormGroup = this.fb.group({
-    item: ['', [Validators.required]],
+    item: ["", [Validators.required]],
   });
 
   inicio() {
-    this.ss.obtenerUsuario(localStorage.getItem('user')!).subscribe((r) => {
-      console.log(r);
+    this.ss.obtenerUsuario(localStorage.getItem("user")!).subscribe((r) => {
+      //console.log(r);
       let cont = 0;
       for (let value of r) {
-        console.log(value.item);
+        //console.log(value.item);
         this.items[cont] = value.item;
         cont++;
       }
@@ -58,26 +59,27 @@ export class DashboardComponent implements OnInit {
     );
   }
   submitFormulario() {
+    this.a = false;
     const x = this.miFormulario.value;
     const y = x.item;
-    console.log(this.items.length, x.item);
+    //console.log(this.items.length, x.item);
     this.items[this.items.length] = x.item;
     this.ss
       .nuevoUsuario(this.miFormulario.value, false)
       .subscribe((r) => console.log(r));
-    this.ss.obtenerUsuario(localStorage.getItem('user')!).subscribe((r) => {
-      console.log(r);
+    this.ss.obtenerUsuario(localStorage.getItem("user")!).subscribe((r) => {
+      //console.log(r);
     });
     this.miFormulario.markAllAsTouched();
   }
   eliminar(it: string) {
-    console.log(it);
+    //console.log(it);
     this.ss.obtenerUsuario(it).subscribe((r) => {
-      console.log(r[0].id);
+      //console.log(r[0].id);
       this.ss.eliminarItem(r[0].id).subscribe((r) => {
         const a = this.items.indexOf(it);
         this.items.splice(a, 1);
-        console.log(this.items);
+        //console.log(this.items);
       });
     });
   }
@@ -98,8 +100,8 @@ export class DashboardComponent implements OnInit {
     });
   }
   logout() {
-    localStorage.removeItem('user');
-    this.rr.navigate(['/menu']);
+    localStorage.removeItem("user");
+    this.rr.navigate(["/menu"]);
   }
 }
 //ng-click="click(this)"

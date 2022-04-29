@@ -1,17 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import {
   FormControl,
   Validators,
   FormBuilder,
   FormGroup,
-} from '@angular/forms';
-import { SharedService } from 'src/app/shared.service';
-import { Router } from '@angular/router';
+} from "@angular/forms";
+import { SharedService } from "src/app/shared.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styles: [],
+  selector: "app-login",
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"],
 })
 export class LoginComponent implements OnInit {
   constructor(
@@ -22,8 +22,8 @@ export class LoginComponent implements OnInit {
     console.log(this.miFormulario.value);
   }
   miFormulario: FormGroup = this.fb.group({
-    email: ['', [Validators.required, , Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    email: ["", [Validators.required, , Validators.email]],
+    password: ["", [Validators.required, Validators.minLength(6)]],
   });
   ngOnInit(): void {}
 
@@ -37,12 +37,11 @@ export class LoginComponent implements OnInit {
   submitFormulario() {
     //console.log('holalogin');
     const x = this.miFormulario.value;
-    //console.log(x.password);
     this.ss.log(x.email, x.password).subscribe((r) => {
       if (r.length !== 0) {
-        console.log('hear');
-        localStorage.setItem('user', x.email);
-        this.rr.navigate(['/auth/dashboard']);
+        console.log("hear");
+        localStorage.setItem("user", x.email);
+        this.rr.navigate(["/auth/dashboard"]);
       }
     });
     this.miFormulario.markAllAsTouched();

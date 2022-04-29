@@ -1,19 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 import {
   FormControl,
   Validators,
   FormBuilder,
   FormGroup,
-} from '@angular/forms';
-import { SharedService } from 'src/app/shared.service';
-import { EmailValidatorService } from 'src/app/shared/email-validator.service';
-import { Router } from '@angular/router';
+} from "@angular/forms";
+import { SharedService } from "src/app/shared.service";
+import { EmailValidatorService } from "src/app/shared/email-validator.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-registro',
-  templateUrl: './registro.component.html',
-  styles: [],
+  selector: "app-registro",
+  templateUrl: "./registro.component.html",
+  styleUrls: ["./registro.component.scss"],
 })
 export class RegistroComponent implements OnInit {
   constructor(
@@ -25,30 +25,30 @@ export class RegistroComponent implements OnInit {
 
   miFormulario: FormGroup = this.fb.group(
     {
-      username: ['', [Validators.required, Validators.minLength(3)]],
-      nombre: ['', [Validators.required, Validators.minLength(4)]],
-      apellido: ['', [Validators.required, Validators.minLength(4)]],
-      email: ['', [Validators.required, , Validators.email], [this.eValidator]],
+      username: ["", [Validators.required, Validators.minLength(3)]],
+      nombre: ["", [Validators.required, Validators.minLength(4)]],
+      apellido: ["", [Validators.required, Validators.minLength(4)]],
+      email: ["", [Validators.required, , Validators.email], [this.eValidator]],
       password: [
-        '',
+        "",
         [
           Validators.required,
           Validators.minLength(6),
           Validators.pattern(
-            '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-+]).{6,}$'
+            "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-+]).{6,}$"
           ),
         ],
       ],
-      password2: ['', [Validators.required]],
+      password2: ["", [Validators.required]],
     },
     {
-      validators: [this.ss.camposIguales('password', 'password2')],
+      validators: [this.ss.camposIguales("password", "password2")],
       //validators: [this.ss.log('email', 'password')],
     }
   );
   ngOnInit(): void {}
 
-  emailFormControl = new FormControl('', [
+  emailFormControl = new FormControl("", [
     Validators.required,
     Validators.email,
   ]);
@@ -64,11 +64,11 @@ export class RegistroComponent implements OnInit {
     //console.log('hola');
     //console.log(this.miFormulario.value);
     //console.log(this.miFormulario.status);
-    if (this.miFormulario.status === 'VALID') {
+    if (this.miFormulario.status === "VALID") {
       //console.log('hola');
       this.ss
         .nuevoUsuario(this.miFormulario.value, true)
-        .subscribe((r) => this.rr.navigate(['/auth/login']));
+        .subscribe((r) => this.rr.navigate(["/auth/login"]));
     }
     this.miFormulario.markAllAsTouched();
   }
