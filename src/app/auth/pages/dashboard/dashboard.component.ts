@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { SharedService } from "src/app/shared.service";
+import { PaisValidatorService } from "src/app/shared/pais-validator.service";
 
 @Component({
   selector: "app-dashboard",
@@ -12,7 +13,8 @@ export class DashboardComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private ss: SharedService,
-    private rr: Router
+    private rr: Router,
+    private pValidator: PaisValidatorService
   ) {
     //if (localStorage.getItem('user')) {
     //  this.usuario = JSON.parse(localStorage.getItem('user')!);
@@ -20,6 +22,7 @@ export class DashboardComponent implements OnInit {
     sessionStorage.removeItem("band");
     this.inicio();
   }
+  habitantesPattern: number = 0;
   labelu: string = "";
   usuario: string = "";
   band = true;
@@ -39,6 +42,13 @@ export class DashboardComponent implements OnInit {
 
   formulario: FormGroup = this.fb.group({
     item: ["", [Validators.required]],
+  });
+  //////////////////formulario-paises
+  miFormulario1: FormGroup = this.fb.group({
+    nombre: ["", [Validators.required], [this.pValidator]],
+    abreviatura: ["", [Validators.required]],
+    habitantes: ["", [Validators.required]],
+    continente: ["", [Validators.required, Validators.minLength(6)]],
   });
 
   inicio() {
@@ -106,6 +116,10 @@ export class DashboardComponent implements OnInit {
   logout() {
     localStorage.removeItem("user");
     this.rr.navigate(["/menu"]);
+  }
+  ////////////////////////paises
+  submitFormulario1() {
+    console.log("hi");
   }
 }
 //ng-click="click(this)"

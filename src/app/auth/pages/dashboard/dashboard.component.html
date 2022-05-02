@@ -105,3 +105,80 @@
     </div>
   </form>
 </div>
+<!-- Paises -->
+<div class="cuadro">
+  <div class="container">
+    <form
+      class="example-form"
+      [formGroup]="miFormulario1"
+      (ngSubmit)="submitFormulario1()"
+      autocomplete="off"
+    >
+      <!-- Nombre -->
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="nombre"
+          placeholder="Ex. Venezuela"
+        />
+
+        <mat-error *ngIf="campoNoValido('nombre')"> required </mat-error>
+      </mat-form-field>
+
+      <!-- Abreviatura -->
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Abreviatura</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="abreviatura"
+          placeholder="Ex. vzla"
+        />
+
+        <mat-error *ngIf="campoNoValido('abreviatura')"> required </mat-error>
+      </mat-form-field>
+
+      <!-- Habitantes -->
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Habitantes</mat-label>
+        <input
+          type="number"
+          matInput
+          formControlName="habitantes"
+          placeholder="Ex. 789.456.152"
+        />
+
+        <mat-error *ngIf="campoNoValido('habitantes')"> required </mat-error>
+      </mat-form-field>
+
+      <!-- Continente -->
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Continente</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="continente"
+          placeholder="Ex. America"
+        />
+
+        <mat-error *ngIf="campoNoValido('continente')"> required </mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        type="submit"
+        color="primary"
+        [disabled]="miFormulario1.pending"
+        id="boton"
+      >
+        Save
+      </button>
+    </form>
+  </div>
+</div>
