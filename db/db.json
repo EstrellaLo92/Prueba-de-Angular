@@ -123,11 +123,6 @@
   "items": [
     {
       "email": "test1@test.com",
-      "item": "Run",
-      "id": 13
-    },
-    {
-      "email": "test1@test.com",
       "item": "Sleep",
       "id": 14
     },
@@ -145,6 +140,11 @@
       "email": "test1@test.com",
       "item": "Work",
       "id": 17
+    },
+    {
+      "email": "test1@test.com",
+      "item": "N",
+      "id": 18
     }
   ]
 }

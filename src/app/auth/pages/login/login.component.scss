@@ -2,28 +2,59 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
-  margin: 50px;
+  //padding: 10px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.9);
+  margin: auto;
   height: 50%;
+  width: 30%;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+  left: 34%;
 }
 .container {
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
-
+.container:hover {
+  backdrop-filter: blur(3px);
+}
+.example-form:hover {
+  width: 90%;
+}
 .example-form {
   align-items: center;
   justify-content: center;
   margin: auto;
   width: 80%;
+  color: black;
 }
 .example-full-width {
   width: 80%;
+  color: black;
+}
+span {
+  color: black;
 }
 #boton {
+  margin: 10px;
   width: 80%;
+  background: rgb(85, 144, 189);
+  background: linear-gradient(
+    90deg,
+    rgba(85, 144, 189, 1) 0%,
+    rgba(108, 183, 240, 1) 54%,
+    rgba(182, 216, 242, 1) 82%
+  );
 }
 h1 {
   color: white;
+}
+#icono {
+  width: 80px;
+  height: 80px;
+  font-size: 50px;
 }

@@ -1,4 +1,3 @@
-<app-menu></app-menu>
 <br />
 <div class="cuadro">
   <div class="container">
@@ -8,6 +7,7 @@
       (ngSubmit)="submitFormulario()"
       autocomplete="off"
     >
+      <span class="material-icons"> person_add_alt_1 </span>
       <h1 class="h1">Sign Up</h1>
       <!-- Usuario -->
 
@@ -107,6 +107,8 @@
       >
         Save
       </button>
+      <br />
+      <a routerLink="/auth/login">¿Tienes cuenta? Login</a>
     </form>
   </div>
 </div>

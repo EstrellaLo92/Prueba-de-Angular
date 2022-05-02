@@ -1,4 +1,3 @@
-<app-menu></app-menu>
 <br />
 <div class="cuadro">
   <div class="container">
@@ -8,6 +7,10 @@
       (ngSubmit)="submitFormulario()"
       autocomplete="off"
     >
+      <mat-icon aria-hidden="false" aria-label="Example home icon" id="icono"
+        >person</mat-icon
+      >
+
       <h1 class="h1">Login</h1>
 
       <!-- Email -->
@@ -19,6 +22,7 @@
           matInput
           formControlName="email"
           placeholder="Ex. daniel@gmail.com"
+          color="black"
         />
 
         <mat-error *ngIf="campoNoValido('email')">
@@ -28,28 +32,33 @@
 
       <!-- Pass -->
 
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Password</mat-label>
+      <mat-form-field
+        class="example-full-width"
+        appearance="fill"
+        color="black"
+      >
+        <mat-label id="lab" color="black">Password</mat-label>
         <input
           type="password"
           matInput
           formControlName="password"
           placeholder="Ex. *******"
+          color="black"
         />
 
-        <mat-error *ngIf="campoNoValido('password')">
+        <mat-error *ngIf="campoNoValido('password')" color="black">
           invalid password
         </mat-error>
       </mat-form-field>
       <button
         mat-raised-button
         type="submit"
-        color="primary"
         id="boton"
         [disabled]="miFormulario.pending"
       >
         Log
       </button>
+      <a routerLink="/auth/registro">¿No tienes cuenta? Registrate</a>
     </form>
   </div>
 </div>

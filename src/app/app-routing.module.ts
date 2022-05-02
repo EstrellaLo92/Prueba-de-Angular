@@ -1,6 +1,6 @@
 import { Component, NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { MenuComponent } from "./shared/menu/menu.component";
+import { LoginComponent } from "./auth/pages/login/login.component";
 
 const routes: Routes = [
   {
@@ -9,12 +9,12 @@ const routes: Routes = [
   },
   {
     path: "",
-    component: MenuComponent,
+    component: LoginComponent,
     pathMatch: "full",
   },
   {
     path: "menu",
-    component: MenuComponent,
+    component: LoginComponent,
   },
   {
     path: "**",
