@@ -125,7 +125,7 @@
           placeholder="Ex. Venezuela"
         />
 
-        <mat-error *ngIf="campoNoValido('nombre')"> required </mat-error>
+        <mat-error *ngIf="campoNoValido1('nombre')"> required </mat-error>
       </mat-form-field>
 
       <!-- Abreviatura -->
@@ -139,7 +139,12 @@
           placeholder="Ex. vzla"
         />
 
-        <mat-error *ngIf="campoNoValido('abreviatura')"> required </mat-error>
+        <mat-error
+          [hidden]="bandera === false"
+          *ngIf="campoNoValido1('abreviatura')"
+        >
+          required
+        </mat-error>
       </mat-form-field>
 
       <!-- Habitantes -->
@@ -153,7 +158,7 @@
           placeholder="Ex. 789.456.152"
         />
 
-        <mat-error *ngIf="campoNoValido('habitantes')"> required </mat-error>
+        <mat-error *ngIf="campoNoValido1('habitantes')"> required </mat-error>
       </mat-form-field>
 
       <!-- Continente -->
@@ -167,7 +172,7 @@
           placeholder="Ex. America"
         />
 
-        <mat-error *ngIf="campoNoValido('continente')"> required </mat-error>
+        <mat-error *ngIf="campoNoValido1('continente')"> required </mat-error>
       </mat-form-field>
 
       <button
@@ -179,6 +184,10 @@
       >
         Save
       </button>
+      <label [hidden]="bandera === false" class="label">pais no existe</label>
+      <label [hidden]="bandera1 === false" class="label1"
+        >pais agregado con exito</label
+      >
     </form>
   </div>
 </div>

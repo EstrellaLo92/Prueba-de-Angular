@@ -19,12 +19,15 @@ export class DashboardComponent implements OnInit {
     //if (localStorage.getItem('user')) {
     //  this.usuario = JSON.parse(localStorage.getItem('user')!);
     //}
+    console.log(this.miFormulario1.status);
     sessionStorage.removeItem("band");
     this.inicio();
   }
   habitantesPattern: number = 0;
   labelu: string = "";
   usuario: string = "";
+  bandera = false;
+  bandera1 = false;
   band = true;
   b = false;
   a = false;
@@ -45,10 +48,14 @@ export class DashboardComponent implements OnInit {
   });
   //////////////////formulario-paises
   miFormulario1: FormGroup = this.fb.group({
-    nombre: ["", [Validators.required], [this.pValidator]],
+    email: [
+      localStorage.getItem("user")!,
+      [Validators.required, Validators.email],
+    ],
+    nombre: ["", [Validators.required]],
     abreviatura: ["", [Validators.required]],
     habitantes: ["", [Validators.required]],
-    continente: ["", [Validators.required, Validators.minLength(6)]],
+    continente: ["", [Validators.required]],
   });
 
   inicio() {
@@ -119,7 +126,33 @@ export class DashboardComponent implements OnInit {
   }
   ////////////////////////paises
   submitFormulario1() {
+    this.bandera = false;
     console.log("hi");
+    const x = this.miFormulario1.value;
+    if (this.miFormulario.status === "VALID") {
+      this.ss.pais(x.nombre).subscribe(
+        (r) => {
+          console.log("hear", r);
+          this.ss
+            .paisAgg(this.miFormulario1.value)
+            .subscribe((r) => console.log(r));
+          //this.miFormulario1.reset()
+          //this.miFormulario1.touched = false;
+          this.bandera1 = true;
+        },
+        (error) => {
+          console.log("banderita");
+          this.bandera = true;
+        }
+      );
+    }
+  }
+  campoNoValido1(campo: string) {
+    return (
+      this.miFormulario1.get(campo)?.invalid &&
+      this.miFormulario1.get(campo)?.touched
+    );
   }
 }
 //ng-click="click(this)"
+//json-server --watch db.json

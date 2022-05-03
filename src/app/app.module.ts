@@ -9,6 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { ErrorComponent } from './error/error.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     AuthModule,
     RouterModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

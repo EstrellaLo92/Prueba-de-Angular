@@ -5,7 +5,7 @@ import {
   AsyncValidator,
   ValidationErrors,
 } from "@angular/forms";
-import { delay, map, Observable } from "rxjs";
+import { delay, catchError, map, Observable } from "rxjs";
 
 @Injectable({
   providedIn: "root",

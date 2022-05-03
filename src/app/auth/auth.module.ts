@@ -15,9 +15,11 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import { MatListModule } from "@angular/material/list";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { NgChartsModule } from "ng2-charts";
+import { GraficasComponent } from './pages/graficas/graficas/graficas.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegistroComponent, DashboardComponent],
+  declarations: [LoginComponent, RegistroComponent, DashboardComponent, GraficasComponent],
   imports: [
     ReactiveFormsModule,
     MatToolbarModule,
@@ -28,6 +30,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
     MatInputModule,
     MatIconModule,
     MatSidenavModule,
+    NgChartsModule,
     SharedModule,
     CommonModule,
     AuthRoutingModule,

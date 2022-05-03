@@ -54,5 +54,14 @@ export class SharedService {
     console.log(typeof campo1);
     return this.http.patch(`http://localhost:3000/items/${campo1}`, campo2);
   }
+  ///////////////////////////////////////////Paises
+  pais(control: string) {
+    return this.http.get<any[]>(
+      `https://restcountries.com/v3.1/name/${control}`
+    );
+  }
+  paisAgg(control: any) {
+    return this.http.post("http://localhost:3000/paises", control);
+  }
 }
 //json-server --watch db.json

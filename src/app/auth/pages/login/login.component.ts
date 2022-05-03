@@ -39,9 +39,11 @@ export class LoginComponent implements OnInit {
     const x = this.miFormulario.value;
     this.ss.log(x.email, x.password).subscribe((r) => {
       if (r.length !== 0) {
-        console.log("hear");
-        localStorage.setItem("user", x.email);
-        this.rr.navigate(["/auth/dashboard"]);
+        if (r[0].password === x.password) {
+          console.log("hear");
+          localStorage.setItem("user", x.email);
+          this.rr.navigate(["/auth/dashboard"]);
+        }
       }
     });
     this.miFormulario.markAllAsTouched();
